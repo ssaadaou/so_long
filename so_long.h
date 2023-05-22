@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 17:57:56 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/05/18 23:41:08 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/05/22 21:15:33 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,19 +28,29 @@ typedef struct s_list
     char **map_2d;
     int x_player;
     int y_player;
+    void *mlx;
+    void *win;
+    void *player;
+    void *wall;
+    void *coin;
+    void *gate;
+    void *space;
+    int width;
+    int height;
 } t_list;
 
 // char	*ft_strdup(const char *src);
 void	ft_putstr_fd(char *s, int fd);
 int     ft_strlen(char *s);
 int     _error(int ac, char **av);
-char **splitt(char *s, char c);
+char    **splitt(char *s, char c);
 void	check_elements(t_list *game_data);
 void	check_map(t_list *game_data);
-int	_free(char **res);
+int	    _free(char **res);
 void	check_rectangular(t_list *game_data);
-int ft_strlen_lines(char **map_2d);
+int     ft_strlen_lines(char **map_2d);
 void	check_wall(t_list *game_data);
-void position_player(t_list *game_data);
+void    position_player(t_list *game_data);
+void    *display_game_elements(t_list *game_data, char **map);
 
 #endif

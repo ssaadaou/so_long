@@ -6,13 +6,13 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 17:57:04 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/05/18 13:00:40 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/05/22 19:29:54 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	check_elements(t_list *game_data)
+void	check_elements(t_list *data)
 {
 	int	i;
 	int	count;
@@ -24,7 +24,7 @@ void	check_elements(t_list *game_data)
 	count = 0;
 	count1 = 0;
 	count2 = 0;
-	map = game_data->map_1d;
+	map = data->map_1d;
 	while (map[i])
 	{
 		if (map[i] == 'P')
@@ -43,14 +43,14 @@ void	check_elements(t_list *game_data)
 	}
 }
 
-void	check_map(t_list *game_data)
+void	check_map(t_list *data)
 {
 	int	i;
 	char *map;
-// printf("%s\n",game_data->map_1d);
+// printf("%s\n",data->map_1d);
 //     exit (0);
 	i = 0;
-	map = game_data->map_1d;
+	map = data->map_1d;
 	while (map[i])
 	{
 		if (map[i] == '1' || map[i] == '0' || map[i] == 'C'
@@ -65,15 +65,15 @@ void	check_map(t_list *game_data)
 	}
 }
 
-void position_player(t_list *game_data)
+void position_player(t_list *data)
  {
     int i;
     int j ;
     char **m_2d;
     
-    game_data->x_player = 0;
-    game_data->y_player = 0;
-    m_2d = game_data->map_2d;
+    data->x_player = 0;
+    data->y_player = 0;
+    m_2d = data->map_2d;
     i =0;
     while(m_2d[i])
     {
@@ -82,8 +82,8 @@ void position_player(t_list *game_data)
         {
             if(m_2d[i][j] == 'P')
             {
-                game_data->x_player = i;
-                game_data->y_player = j;
+                data->x_player = i;
+                data->y_player = j;
                 return;
             }
             j++;
@@ -92,9 +92,9 @@ void position_player(t_list *game_data)
     }
  }
 
-void check_path_P(t_list *game_data)
-{
-	char **map_2d;
+// void check_path_P(t_list *data)
+// {
+// 	char **map_2d;
 	
 	
-}
+// }
