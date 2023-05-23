@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   window.c                                           :+:      :+:    :+:   */
+/*   keyboard.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 17:56:07 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/05/18 23:42:09 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/05/23 20:12:17 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,18 @@
 
 mlx_hook(data->win, 2, 1L<<0, keypress, data)
 
-int	key_code(int key_code, t_list *info)
+int	key_hook(int key_hook, t_list *data)
 {
-	if (key_code == 124 || key_code == 2)
-		move_right(info);
-	if (key_code == 123 || key_code == 0)
-		move_left(info);
-	if (key_code == 125 || key_code == 1)
-		move_down(info);
-	if (key_code == 126 || key_code == 13)
-		move_up(info);
-	if (key_code == 53)
-		quit(info);
+	if (key_hook == 124 || key_hook == 2)
+		move_right(data);
+	if (key_hook == 123 || key_hook == 0)
+		move_left(data);
+	if (key_hook == 125 || key_hook == 1)
+		move_down(data);
+	if (key_hook == 126 || key_hook == 13)
+		move_up(data);
+	if (key_hook == 53)
+		quit(data);
 	return (0);
 }
 

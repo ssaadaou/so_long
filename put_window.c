@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 18:56:40 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/05/23 17:54:43 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/05/23 20:23:44 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,22 +58,22 @@ void *display_game_elements(t_list *data, char **map)
         i++;
     }
     mlx_loop(data->mlx);
-    mlx_hook(data->win, key_hook, &data->win);
+    mlx_loop_hook(data->win, &display_game_elements, data);
     return NULL;
 }
 
-
-int	key_hook(int key_hook, t_list *data)
+int key_hook(int key, t_list *data)
 {
-	if (key_hook == 124 || key_hook == 2)
-		move_right(data);
-	if (key_hook == 123 || key_hook == 0)
-		move_left(data);
-	if (key_hook == 125 || key_hook == 1)
-		move_down(data);
-	if (key_hook == 126 || key_hook == 13)
-		move_up(data);
-	if (key_hook == 53)
-		quit(data);
-	return (0);
+    printf("%d\n", key);
+    return 0;
+}
+
+void key_hook(t_list *data)
+{
+    if(keycode == 'W')
+        data->x_player -=1;
+    if(keycode == 'D')
+        data->y_player += 1;
+    
+    return 0; 
 }
