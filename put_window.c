@@ -35,16 +35,9 @@ void *display_game_elements(t_list *data, char **map)
         while(map[i][j])
         {
             if(map[i][j] == 'P')
-            {
-                mlx_put_image_to_window(data->mlx, data->win, data->space,j*50 , i*50);
                 mlx_put_image_to_window(data->mlx, data->win, data->player, j*50, i*50);
-                
-            }
             if(map[i][j] == 'C')
-            {
-                mlx_put_image_to_window(data->mlx, data->win, data->space,j*50 , i*50);
                 mlx_put_image_to_window(data->mlx, data->win, data->coin, j*50, i*50);
-            }
             if(map[i][j] == 'E')
                 mlx_put_image_to_window(data->mlx, data->win, data->gate,j*50 , i*50);
             if(map[i][j] == '0')
@@ -53,9 +46,9 @@ void *display_game_elements(t_list *data, char **map)
                 mlx_put_image_to_window(data->mlx, data->win, data->wall,j*50 , i*50);   
             j++;
         }
-        // printf("\n");
         i++;
     }
     mlx_loop(data->mlx);
+    mlx_hook(data->win, 2, 1L<<0, keypress, data);
     return NULL;
 }
