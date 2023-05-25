@@ -6,31 +6,11 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 17:55:47 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/05/23 14:51:19 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/05/25 17:28:26 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-// char	*ft_strdup( char *src)
-// {
-// 	int		i;
-// 	int		lendsrc;
-// 	char	*cpy;
-
-// 	i = 0;
-// 	lendsrc = strlen(src);
-// 	cpy = malloc(sizeof(char) * (lendsrc + 1));
-// 	if (!cpy)
-// 		return (NULL);
-// 	while (src[i])
-// 	{
-// 		cpy[i] = src[i];
-// 		i++;
-// 	}
-// 	cpy[i] = '\0';
-// 	return (cpy);
-// }
 
 void	ft_putchar_fd(char c, int fd)
 {
@@ -53,36 +33,31 @@ int ft_strlen_lines(char **map_2d)
 		i++;
 	return (i);
 }
-// // //
-void	floodfill(char **map, int y, int x, int base)
+void	ft_putnbr_fd(long long nbr, int fd)
 {
-	if (map[y][x] != '0' && map[y][x] != 'P' && map[y][x] != base
-		&& map[y][x] != 'C')
-		return ;
-	map[y][x] = 'X';
-	floodfill(map, y, x + 1, base);
-	floodfill(map, y, x - 1, base);
-	floodfill(map, y + 1, x, base);
-	floodfill(map, y - 1, x, base);
-}
-
-int	check_exist(char **map, int base)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (map[i])
+	if(nbr < 0)
 	{
-		j = 0;
-		while (map[i][j])
-		{
-			if (map[i][j] == base)
-				return (1);
-			j++;
-		}
-		i++;
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd((nbr * -1), fd);	
 	}
-	return (0);
+	if(nbr >= 0 && nbr < 10)
+	{
+		ft_putchar_fd((nbr + '0'), fd);
+	}
+	if(nbr >= 10)
+	{
+		ft_putnbr_fd(nbr / 10, fd);
+		ft_putnbr_fd(nbr % 10,fd);
+	}
 }
 
+// int main()
+// {
+// 	int fd = open("test.txt", O_RDWR);
+// 	if (fd =0)
+// 	{
+// 		puts("here");
+// 		return 0;
+// 	}
+// 	ft_putnbr_fd(-23984998999999999999, fd);
+//}

@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 18:56:40 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/05/23 20:23:44 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/05/25 18:43:31 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,22 +58,30 @@ void *display_game_elements(t_list *data, char **map)
         i++;
     }
     mlx_loop(data->mlx);
-    mlx_loop_hook(data->win, &display_game_elements, data);
+    mlx_loop_hook(data->win, &key_hook, data);
     return NULL;
 }
 
-int key_hook(int key, t_list *data)
-{
-    printf("%d\n", key);
-    return 0;
-}
+// int key_hook(int key, t_list *data)
+// {
+//     printf("%d\n", key);
+//     return 0;
+// }
 
-void key_hook(t_list *data)
+void key_hundle(t_list *data)
 {
-    if(keycode == 'W')
-        data->x_player -=1;
-    if(keycode == 'D')
-        data->y_player += 1;
+    if(key == 13 || key == 126)
+        move_up(data);
     
-    return 0; 
+    if(key == 1 || key == 125)
+       move_down(data);
+   
+    if(key == 0 || key == 123)
+        move_left(data);
+    
+    if (key == 2 || key == 124)
+        move_right(data);
+    if (key == 53)
+        mlx_destroy_window(data->mlx, data->win); 
+   return 0; 
 }

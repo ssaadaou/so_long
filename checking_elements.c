@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 17:57:04 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/05/22 19:29:54 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/05/25 13:45:14 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,8 @@ void position_player(t_list *data)
                 data->y_player = j;
                 return;
             }
+			if(m_2d[i][j] == 'C')
+				data->count_C += 1;
             j++;
         }
         i++;

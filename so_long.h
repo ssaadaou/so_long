@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 17:57:56 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/05/23 20:21:40 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/05/25 17:54:32 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,13 @@ typedef struct s_list
     void *space;
     int width;
     int height;
+    int count_C;
+    int count_move;
 } t_list;
 
 // char	*ft_strdup(const char *src);
 void	ft_putstr_fd(char *s, int fd);
+void	ft_putnbr_fd(int nbr, int fd);
 int     ft_strlen(char *s);
 int     _error(int ac, char **av);
 char    **splitt(char *s, char c);
@@ -52,5 +55,6 @@ int     ft_strlen_lines(char **map_2d);
 void	check_wall(t_list *game_data);
 void    position_player(t_list *game_data);
 void    *display_game_elements(t_list *game_data, char **map);
-
+void    move_up(t_list *data);
+void    move_down(t_list *data);
 #endif
