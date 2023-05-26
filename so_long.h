@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 17:57:56 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/05/26 20:24:41 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/05/26 22:24:30 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <unistd.h>
 # include <string.h>
 # include <fcntl.h>
-// # include <mlx.h>
+# include <mlx.h>
 
 typedef struct s_list
 {
@@ -61,6 +61,8 @@ void    move_right(t_list *data);
 void    move_left(t_list *data);
 int    key_hundle(int key ,t_list *data);
 void    display_image(t_list *data);
-void mvmt(t_list *data, int x, int y);
-void ff(t_list *data);
+// void    ff(t_list *data);
+void var_init(t_list *data);
+void moves(t_list *data , int x, int y);
+
 #endif

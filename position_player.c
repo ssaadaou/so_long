@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 17:57:04 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/05/26 16:58:56 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/05/26 22:22:58 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void position_player(t_list *data)
     }
  }
 
-void init(t_list *data)
+void var_init(t_list *data)
 {
     data->count_C = 0;
 	data->count_move = 0;

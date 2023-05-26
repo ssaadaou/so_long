@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 17:56:07 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/05/26 21:55:03 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/05/26 22:15:18 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@ void	check_map(t_list *data)
 {
 	int	i;
 	char *map;
+	map = data->map_1d;
 	int new_line_count = 0;
 	
 	i = 0;
@@ -49,11 +50,11 @@ void	check_map(t_list *data)
 }
 
 
-int main()
-{
-	check_map();
-	return 0;
-}
+// int main()
+// {
+// 	check_map();
+// 	return 0;
+// }
 void	check_elements(t_list *data)
 {
 	int	i;

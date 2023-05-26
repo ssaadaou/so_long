@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 18:56:40 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/05/26 16:22:53 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/05/26 22:16:30 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,12 @@ void *display_game_elements(t_list *data, char **map)
     }
     return NULL;
 }
+void count_moves(t_list *data)
+{
+    data->count_move += 1;
+    ft_putstr_fd("\nMouvements -->> ", 1);
+    ft_putnbr_fd(data->count_move, 1);
+}
 void moves(t_list *data , int x, int y)
 {
      if (data->map_2d[data->x_player+x][data->y_player + y] == '1')
@@ -73,14 +79,8 @@ void moves(t_list *data , int x, int y)
         data->map_2d[data->x_player+x][data->y_player + y] = 'P';   
     }
     count_moves(data);
-    display_game_elements(data, data->map_2d);
-}
-void count_moves(t_list *data)
-{
-    data->count_move += 1;
-    ft_putstr_fd("\nMouvements -->> ", 1);
-    ft_putnbr_fd(data->count_move, 1);
     data->y_player += y; 
     data->x_player += x;    
+    display_game_elements(data, data->map_2d);
 }
 
