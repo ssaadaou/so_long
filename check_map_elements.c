@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 17:56:07 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/05/26 17:34:11 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/05/26 21:55:03 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,25 +18,27 @@ void	check_map(t_list *data)
 	int new_line_count = 0;
 	
 	i = 0;
-	
-	while (map[i])
-	{
-		if (map[i] == '1' || map[i] == '0' || map[i] == 'C'
-			|| map[i] == 'P' || map[i] == 'E')
-			{
-				new_line_count = 0;
-				i++;
-			}
-		else if(map[i] == '\n')
-		{
-			new_line_count++;
-			if(new_line_count > 1)
-			{
-				free(map);
-				ft_putstr_fd("Error: Too Many new lines", 2);
-				exit (1);
-			}
-		}
+	while (map[i] != '\0')
+    {
+        if (map[i] == '1' || map[i] == '0' || map[i] == 'C'||
+            map[i] == 'P' || map[i] == 'E'|| map[i]=='\n')
+        {
+            if(map[i] == '\n')
+            {
+                new_line_count++;
+                if(new_line_count > 1)
+                {
+                    puts("Error: Too Many New Lines");
+                    exit (1);
+                }
+                i++;
+            }
+            else
+            {
+                new_line_count = 0;
+                i++;
+            }
+        }
 		else
 		{
 			free(map);
@@ -46,6 +48,12 @@ void	check_map(t_list *data)
 	}
 }
 
+
+int main()
+{
+	check_map();
+	return 0;
+}
 void	check_elements(t_list *data)
 {
 	int	i;

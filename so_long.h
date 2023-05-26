@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 17:57:56 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/05/26 02:20:03 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/05/26 20:24:41 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <unistd.h>
 # include <string.h>
 # include <fcntl.h>
-# include <mlx.h>
+// # include <mlx.h>
 
 typedef struct s_list
 {
