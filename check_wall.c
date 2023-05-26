@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 17:57:15 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/05/26 02:15:39 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/05/26 16:01:34 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ void	check_rectangular(t_list *data)
 	len = ft_strlen(data->map_2d[0]);
 	while(m_2d[i])
 	{
-		// printf("%d\n", i);
-		// printf("%d\n", len);
 		if(len != ft_strlen(m_2d[i]))
 		{
 			ft_putstr_fd("Error: Map is not rectangular",2);

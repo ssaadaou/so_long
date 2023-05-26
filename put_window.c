@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 18:56:40 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/05/26 02:24:54 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/05/26 16:22:53 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,7 @@ void *display_game_elements(t_list *data, char **map)
             if(map[i][j] == '0')
                 mlx_put_image_to_window(data->mlx, data->win, data->space,j*50 , i*50);
             if(map[i][j] == '1')
-            {
                 mlx_put_image_to_window(data->mlx, data->win, data->wall,j*50 , i*50);   
-
-                
-            }
             j++;
         }
         i++;
@@ -74,34 +70,17 @@ void moves(t_list *data , int x, int y)
     else
     {
         data->map_2d[data->x_player][data->y_player] = '0';
-        data->map_2d[data->x_player+x][data->y_player + y] = 'P';
-        
+        data->map_2d[data->x_player+x][data->y_player + y] = 'P';   
     }
+    count_moves(data);
+    display_game_elements(data, data->map_2d);
+}
+void count_moves(t_list *data)
+{
     data->count_move += 1;
     ft_putstr_fd("\nMouvements -->> ", 1);
     ft_putnbr_fd(data->count_move, 1);
     data->y_player += y; 
-    data->x_player += x;  
-    display_game_elements(data, data->map_2d);
-
-        
-
+    data->x_player += x;    
 }
 
-
-int key_hundle(int key,t_list *data)
-{
-    
-    // int key;
-    if(key == 13 || key == 126)    // move_up(data);
-        moves(data, -1 , 0);
-    else if(key == 1 || key == 125) //move_down(data);
-        moves(data, +1 , 0);
-    else if(key == 0 || key == 123)  //move_left(data);
-        moves(data, 0 , -1);
-    else if (key == 2 || key == 124) // move_right(data);
-        moves(data, 0 , +1);
-    else if (key == 53)
-        mlx_destroy_window(data->mlx, data->win); 
-   return 0; 
-}

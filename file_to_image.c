@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 18:55:40 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/05/26 02:16:06 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/05/26 16:23:37 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,23 @@ void    display_image(t_list *data)
     display_game_elements(data, data->map_2d);
 }
  
- 
+ int key_hundle(int key,t_list *data)
+{
+    
+    
+    if(key == 13 || key == 126)    
+          moves(data, -1 , 0);
+    else if(key == 1 || key == 125)
+            moves(data, 1 , 0);
+    else if(key == 0 || key == 123) 
+            moves(data, 0 , -1);
+    else if (key == 2 || key == 124) 
+        moves(data, 0 , 1);
+    else if (key == 53)
+    {
+        mlx_destroy_window(data->mlx, data->win); 
+        exit (0);
+        return 0;
+    }
+   return 0; 
+}

@@ -6,7 +6,7 @@
 #    By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/13 17:55:55 by ssaadaou          #+#    #+#              #
-#    Updated: 2023/05/26 00:44:51 by ssaadaou         ###   ########.fr        #
+#    Updated: 2023/05/26 16:41:30 by ssaadaou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,9 +21,8 @@ CFLAGS = -Wall -Wextra -Werror -g
 RM = rm -rf
 
 SRC = main.c utils.c get_next_line.c get_next_line_utils.c \
-	checking_errors.c split.c check_map.c checking_elements.c \
-	put_window.c mvmt_left_right.c movements.c file_to_image.c  \
-	test.c     
+	checking_errors.c split.c check_wall.c checking_map_elements.c \
+	put_window.c file_to_image.c test.c     
 
 OBJ = $(SRC:.c=.o)
 

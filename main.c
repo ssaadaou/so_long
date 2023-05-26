@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 17:55:14 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/05/26 02:20:58 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/05/26 16:59:56 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void ff(t_list *data)
 {
-     check_rectangular(data);
+    check_rectangular(data);
     check_wall(data);
     position_player(data);
     data->mlx = mlx_init();
@@ -39,6 +39,7 @@ int main (int ac, char **av)
         line = get_next_line(fd);
     }
     data = malloc(sizeof(t_list));
+    init(data);
     data->map_1d = map;
     check_map(data);
     check_elements(data);
