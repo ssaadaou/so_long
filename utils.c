@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 17:55:47 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/05/25 17:28:26 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/05/25 18:59:46 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int ft_strlen_lines(char **map_2d)
 		i++;
 	return (i);
 }
-void	ft_putnbr_fd(long long nbr, int fd)
+void	ft_putnbr_fd(int nbr, int fd)
 {
 	if(nbr < 0)
 	{

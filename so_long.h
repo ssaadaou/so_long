@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 17:57:56 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/05/25 17:54:32 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/05/26 02:20:03 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,10 @@ void    position_player(t_list *game_data);
 void    *display_game_elements(t_list *game_data, char **map);
 void    move_up(t_list *data);
 void    move_down(t_list *data);
+void    move_right(t_list *data);
+void    move_left(t_list *data);
+int    key_hundle(int key ,t_list *data);
+void    display_image(t_list *data);
+void mvmt(t_list *data, int x, int y);
+void ff(t_list *data);
 #endif

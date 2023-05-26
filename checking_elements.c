@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 17:57:04 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/05/25 13:45:14 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/05/26 02:15:18 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,8 @@ void position_player(t_list *data)
     int i;
     int j ;
     char **m_2d;
-    
+     data->count_C = 0;
+	  data->count_move = 0;
     data->x_player = 0;
     data->y_player = 0;
     m_2d = data->map_2d;
@@ -84,19 +85,14 @@ void position_player(t_list *data)
             {
                 data->x_player = i;
                 data->y_player = j;
-                return;
+                // return;
             }
-			if(m_2d[i][j] == 'C')
+			else if(m_2d[i][j] == 'C')
 				data->count_C += 1;
             j++;
         }
         i++;
+
     }
  }
 
-// void check_path_P(t_list *data)
-// {
-// 	char **map_2d;
-	
-	
-// }

@@ -6,7 +6,7 @@
 #    By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/13 17:55:55 by ssaadaou          #+#    #+#              #
-#    Updated: 2023/05/22 19:01:04 by ssaadaou         ###   ########.fr        #
+#    Updated: 2023/05/26 00:44:51 by ssaadaou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,13 +16,14 @@ LIBRARY = so_long.h
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
 RM = rm -rf
 
 SRC = main.c utils.c get_next_line.c get_next_line_utils.c \
 	checking_errors.c split.c check_map.c checking_elements.c \
-	put_window.c
+	put_window.c mvmt_left_right.c movements.c file_to_image.c  \
+	test.c     
 
 OBJ = $(SRC:.c=.o)
 
@@ -30,6 +31,8 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -lmlx -framework OpenGL -framework AppKit -o $(NAME) 
+
+mc : all clean
 
 %.o : %.c $(LIBRARY)
 	$(CC) $(CFLAGS) -Imlx -c  $< -o $@

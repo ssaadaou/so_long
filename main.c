@@ -6,13 +6,23 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 17:55:14 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/05/22 20:52:05 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/05/26 02:20:58 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 #include "get_next_line.h"
 
+void ff(t_list *data)
+{
+     check_rectangular(data);
+    check_wall(data);
+    position_player(data);
+    data->mlx = mlx_init();
+    display_image(data);
+    mlx_hook(data->win,2,0, key_hundle, data);
+    mlx_loop(data->mlx);
+}
 int main (int ac, char **av)
 {
     int fd;
@@ -34,14 +44,5 @@ int main (int ac, char **av)
     check_elements(data);
     split_map = splitt(map, '\n');
     data->map_2d = split_map;
-    check_rectangular(data);
-    check_wall(data);
-    position_player(data);
-    display_game_elements(data, split_map);
-    
-
-
-    // printf("%c\n", data->map_2d[data->x_player][data->y_player]);
-    // printf("%d\n", data->x_player);
-    // printf("%d\n", data->y_player);
+    ff(data);
 }

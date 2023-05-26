@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 17:57:15 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/05/22 19:29:34 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/05/26 02:15:39 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,23 +32,7 @@ void	check_rectangular(t_list *data)
 	}
 	
 }
-// void check_top_wall(t_list *data)
-// {
-// 	int i = 0;
-// 	while(data->map_2d[0][i])
-// 	{
-// 		if(data->map_2d[0][i] != '1')
-// 		{
-// 		}
-// 		i++;
-// 	}
-// }
 
-// void	check_bottom_wall(t_list *data)
-// {
-	
-// 	while()
-// }
 void	check_wall(t_list *data)
 {
 	int len_col;
