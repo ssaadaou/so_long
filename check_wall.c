@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_map.c                                        :+:      :+:    :+:   */
+/*   check_wall.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 17:57:15 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/05/26 16:01:34 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/05/27 21:44:16 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	check_rectangular(t_list *data)
 	{
 		if(len != ft_strlen(m_2d[i]))
 		{
+			//free_2d
 			ft_putstr_fd("Error: Map is not rectangular",2);
 				exit(1);
 		}

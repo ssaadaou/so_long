@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 17:55:47 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/05/25 18:59:46 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/05/28 01:00:43 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,16 @@ void	ft_putnbr_fd(int nbr, int fd)
 		ft_putnbr_fd(nbr % 10,fd);
 	}
 }
-
+void my_free(char **map) 
+{
+    int i = 0;
+    while(map[i]) 
+	{
+        free(map[i]);
+        i++;
+    }
+    free(map);
+}
 // int main()
 // {
 // 	int fd = open("test.txt", O_RDWR);

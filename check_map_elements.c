@@ -6,11 +6,12 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 17:56:07 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/05/26 22:15:18 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/05/26 23:06:13 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"so_long.h"
+
 void	check_map(t_list *data)
 {
 	int	i;
@@ -50,11 +51,6 @@ void	check_map(t_list *data)
 }
 
 
-// int main()
-// {
-// 	check_map();
-// 	return 0;
-// }
 void	check_elements(t_list *data)
 {
 	int	i;

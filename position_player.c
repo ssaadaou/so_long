@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 17:57:04 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/05/26 22:22:58 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/05/28 02:34:51 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ void var_init(t_list *data)
 	data->count_move = 0;
     data->x_player = 0;
     data->y_player = 0;
-    data->count_move = 0;
     data->width = 0;
     data->height = 0;
     data->mlx = NULL;
