@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 17:57:04 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/05/28 02:34:51 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/05/28 19:35:35 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,13 @@ void position_player(t_list *data)
     i =0;
     while(m_2d[i])
     {
-        j=0;
+        j = 0;
         while (m_2d[i][j])
         {
             if(m_2d[i][j] == 'P')
             {
                 data->x_player = i;
                 data->y_player = j;
-                // return;
             }
 			else if(m_2d[i][j] == 'C')
 				data->count_C += 1;
@@ -58,5 +57,15 @@ void var_init(t_list *data)
     data->map = NULL;
     data->map_1d = NULL;
     data->map_2d = NULL;
+    data->w_coin = 0;
+    data->w_player = 0;
+    data->w_wall = 0;
+    data->w_space = 0;
+    data->w_gate = 0;
+    data->h_coin = 0;
+    data->h_player = 0;
+    data->h_wall = 0;
+    data->h_space = 0;
+    data->h_gate = 0;
     
 }

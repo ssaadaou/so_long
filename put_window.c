@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 18:56:40 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/05/28 02:30:44 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/05/28 19:38:27 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,13 @@ void display_game_elements(t_list *data, char **map)
 
     while(data->map_2d[i])
     {
-       
         j = 0;
         while(map[i][j])
         {
             if(map[i][j] == 'P')
                 handle_image(data, map, data->player, i, j);
             if(map[i][j] == 'C')
-                handle_image(data, map, i, j);
+                handle_image(data, map, data->coin, i, j);
             if(map[i][j] == 'E')
                 handle_image(data, map, data->gate, i, j);
             if(map[i][j] == '0')
@@ -72,7 +71,7 @@ void moves(t_list *data , int x, int y)
     else
         handle_movement(data, x, y);
 
-    count_moves(data);
+    // count_moves(data);
     data->y_player += y; 
     data->x_player += x;    
     display_game_elements(data, data->map_2d);

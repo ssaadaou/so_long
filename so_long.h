@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 17:57:56 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/05/28 02:03:19 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/05/28 19:33:55 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,17 @@ typedef struct s_list
     int width;
     int height;
     int count_C;
-    int count_move;
+    // int count_move;
+    int w_coin;
+    int w_player;
+    int w_wall;
+    int w_space;
+    int w_gate;
+    int h_coin;
+    int h_player;
+    int h_wall;
+    int h_space;
+    int h_gate;
 } t_list;
 
 // char	*ft_strdup(const char *src);
@@ -61,6 +71,6 @@ void    display_image(t_list *data);
 void var_init(t_list *data);
 void moves(t_list *data , int x, int y);
 void destroy_win(t_list *data);
-void check_path(struct t_list *data, int base) ;
+void check_path(struct t_list *data, int c) ;
 
 #endif

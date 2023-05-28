@@ -6,7 +6,7 @@
 #    By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/13 17:55:55 by ssaadaou          #+#    #+#              #
-#    Updated: 2023/05/26 22:26:32 by ssaadaou         ###   ########.fr        #
+#    Updated: 2023/05/28 18:58:30 by ssaadaou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ RM = rm -rf
 
 SRC = main.c utils.c get_next_line.c get_next_line_utils.c \
 	checking_errors.c split.c check_wall.c check_map_elements.c \
-	put_window.c file_to_image.c position_player.c     
+	put_window.c file_to_image.c position_player.c valid_path.c    
 
 OBJ = $(SRC:.c=.o)
 

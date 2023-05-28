@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 18:01:25 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/05/14 18:18:33 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/05/28 19:31:48 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,3 +58,22 @@ int read_map(const char *file, int *line, int *column)
 		
 	}
 }
+// int len_height(t_list *data)
+// {
+// 	int i = 0;
+// 	char **map = data->map_2d;
+// 	 while(map[i])
+//     {
+//         i++;
+//     }
+// 	return (i);
+// }
+// int len_width(t_list *data)
+// {
+// 	int j = 0;
+// 	while(data->map_2d[0][j])
+// 	{
+// 		j++;
+// 	}
+// 	return (j);
+// }
