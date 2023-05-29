@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 17:55:14 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/05/28 23:22:13 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/05/29 16:07:19 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ff(t_list *data)
 	mlx_loop(data->mlx);
 }
 
-int	main	(int ac, char **av)
+int	main(int ac, char **av)
 {
 	int		fd;
 	char	*line;

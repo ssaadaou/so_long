@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 14:51:10 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/05/28 23:43:49 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/05/29 16:11:10 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	check_exist(char **map, int c)
 	while (map[i])
 	{
 		j = 0;
-		while (map[i][j]) 
+		while (map[i][j])
 		{
 			if (map[i][j] == c)
 				return (1);
