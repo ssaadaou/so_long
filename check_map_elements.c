@@ -12,6 +12,23 @@
 
 #include"so_long.h"
 
+void	new_line_error(char *map, int new_line_count)
+{
+	if (new_line_count > 1)
+	{
+		free(map);
+		ft_putstr_fd("Error: Too Many New Lines", 2);
+		exit (1);
+	}
+}
+
+void	invalid_map(char *map)
+{
+	free(map);
+	ft_putstr_fd("Error: Invalid map", 2);
+	exit (1);
+}
+
 void	check_map(t_list *data)
 {
 	int		i;
@@ -23,30 +40,18 @@ void	check_map(t_list *data)
 	i = 0;
 	while (map[i] != '\0')
 	{
-		if (map[i] == '1' || map[i] == '0' || map[i] == 'C' \
-		|| map[i] == 'P' || map[i] == 'E' || map[i] == '\n')
+		if (map[i] == '1' || map[i] == '0' || map[i] == 'C' || \
+			map[i] == 'P' || map[i] == 'E' || map[i] == '\n')
 		{
-			if (map[i] == '\n')
-			{
-				new_line_count++;
-				if (new_line_count > 1)
-				{
-					ft_putstr_fd("Error: Too Many New Lines", 2);
-					exit (1);
-				}
-				i++;
-			}
+			if (map[i] == '\n' && ++new_line_count > 1)
+				new_line_error(map, new_line_count);
 			else
-			{
 				new_line_count = 0;
-				i++;
-			}
+			i++;
 		}
 		else
 		{
-			free(map);
-			ft_putstr_fd("Error: Invalid map", 2);
-			exit (1);
+			invalid_map(map);
 		}
 	}
 }
@@ -75,9 +80,5 @@ void	check_elements(t_list *data)
 		i++;
 	}
 	if (count != 1 || count1 != 1 || count2 < 1)
-	{
-		free(map);
-		ft_putstr_fd("Error: invalid map", 2);
-		exit (1);
-	}
+		invalid_map(map);
 }

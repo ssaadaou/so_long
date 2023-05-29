@@ -31,7 +31,7 @@ void	position_player(t_list *data)
 				data->y_player = j;
 			}
 			else if (m_2d[i][j] == 'C')
-				data->count_C += 1;
+				data->count_c += 1;
 			j++;
 		}
 		i++;
@@ -40,7 +40,7 @@ void	position_player(t_list *data)
 
 void	var_init(t_list *data)
 {
-	data->count_C = 0;
+	data->count_c = 0;
 	data->count_move = 0;
 	data->x_player = 0;
 	data->y_player = 0;

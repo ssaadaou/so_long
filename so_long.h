@@ -36,7 +36,7 @@ typedef struct s_list
 	void	*space;
 	int		width;
 	int		height;
-	int		count_C;
+	int		count_c;
 	int		count_move;
 	int		w_coin;
 	int		w_player;

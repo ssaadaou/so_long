@@ -26,6 +26,15 @@ void	ff(t_list *data)
 	mlx_loop(data->mlx);
 }
 
+void	no_line(char *line)
+{
+	if (!line)
+	{
+		ft_putstr_fd("ERROR Empty file!\n", 2);
+		exit (1);
+	}
+}
+
 int	main(int ac, char **av)
 {
 	int		fd;
@@ -38,6 +47,7 @@ int	main(int ac, char **av)
 	split_map = NULL;
 	fd = _error(ac, av);
 	line = get_next_line(fd);
+	no_line(line);
 	while (line)
 	{
 		map = ft_strjoin(map, line);

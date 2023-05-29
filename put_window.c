@@ -53,19 +53,26 @@ void	handle_movement(t_list *data, int x, int y)
 	data ->map_2d[data->x_player + x][data->y_player + y] = 'P';
 }
 
+void	count_moves(t_list *data)
+{
+	data->count_move += 1;
+	ft_putstr_fd("\nMouvements -->> ", 1);
+	ft_putnbr_fd(data->count_move, 1);
+}
+
 void	moves(t_list *data, int x, int y)
 {
 	if (data->map_2d[data->x_player + x][data->y_player + y] == '1' ||
 		(data->map_2d[data->x_player + x][data->y_player + y] == 'E' \
-		&& data->count_C != 0))
+		&& data->count_c != 0))
 		return ;
 	if (data->map_2d[data->x_player + x][data->y_player + y] == 'C')
 	{
-		data->count_C -= 1;
+		data->count_c -= 1;
 		handle_movement(data, x, y);
 	}
 	else if (data->map_2d[data->x_player + x][data->y_player + y] == 'E' \
-	&& data->count_C == 0)
+	&& data->count_c == 0)
 	{
 		ft_putstr_fd("\n\nyou are a winner\n", 1);
 		exit(1);
@@ -76,11 +83,4 @@ void	moves(t_list *data, int x, int y)
 	data->y_player += y;
 	data->x_player += x;
 	display_game_elements(data, data->map_2d);
-}
-
-void	count_moves(t_list *data)
-{
-	data->count_move += 1;
-	ft_putstr_fd("\nMouvements -->> ", 1);
-	ft_putnbr_fd(data->count_move, 1);
 }

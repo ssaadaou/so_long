@@ -82,9 +82,3 @@ int	ft_strchr(char *s)
 	}
 	return (0);
 }
-
-// #include<stdio.h>
-// int main()
-// {
-// 	printf("---->>> %d\n", ft_strchr("hella"));
-// }

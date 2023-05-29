@@ -86,18 +86,3 @@ char	*get_next_line(int fd)
 	save = ft_save_buff(save);
 	return (s);
 }
-
-// int main()
-// {	
-// 	int fd= open("NEW.txt", O_RDWR);
-
-// 	char *s;
-// 	s= get_next_line(fd);
-// 	while(s != NULL)
-// 	{
-// 		printf("%s",s); 
-// 		free(s);
-// 		s = get_next_line(fd);
-// 	}	
-// 	system ("leaks a.out");
-// }

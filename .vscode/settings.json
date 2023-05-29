@@ -10,6 +10,8 @@
         "locale": "c",
         "__locale": "c",
         "ostream": "c",
-        "algorithm": "c"
+        "algorithm": "c",
+        "atomic": "c",
+        "*.tcc": "c"
     }
 }
