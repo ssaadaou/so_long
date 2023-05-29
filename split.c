@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 17:57:29 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/05/14 18:51:04 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/05/29 01:21:31 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,9 @@ static char	*ft_word(char *s, char c, char **word)
 
 int	_free(char **res)
 {
-	int i = 0;
-	
+	int	i;
+
+	i = 0;
 	while (res[i])
 	{
 		free(res[i]);
@@ -76,9 +77,9 @@ int	_free(char **res)
 	return (0);
 }
 
-char **splitt(char *s, char c)
+char	**splitt(char *s, char c)
 {
-    int		i;
+	int		i;
 	int		count;
 	char	**res;
 
